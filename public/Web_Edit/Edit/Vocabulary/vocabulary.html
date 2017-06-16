@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="description" content="词表查询">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="/static/Web_Edit/asset/scripts/urlconfig.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/scripts/areas/vocabulary/operate/vocabulary.css">
+    <script>
+        var OP_CONFIG = { "areas": "vocabulary","page":"operate","view":"vocabulary_view" };
+    </script>
+</head>
+<body>
+<!-- <div id="box">	
+
+</div>	 -->
+<a id="theme0" >内蒙古</a>
+<a id="theme1">中国</a>
+<a id="theme2" >沈阳</a>
+<a id="locateshenyang" data-id="id003">定位沈阳</a>
+<div id="menuTree" class="menuTree"></div>
+
+<!-- <div id="test">  
+        这是内容</div>  -->
+
+<div id="floatboxright" style="background-color:white">
+	<ul class="floatboxright_ul">
+		<li><a class="newOpen" href="http://192.168.6.79:3000/static/middleweb1/index.html" target="_blank">新窗口打开:<span id="localtext"></span></a></li>
+		<li><a class="localopen" href="http://192.168.6.79:3000/static/middleweb1/index.html" >当前窗口打开:<span id="localtext"></span></a></li>
+		<li><a id="">复制款目类号</a></li>
+		<li><a id="n">复制款目类名</a></li>
+		<li><a id="copy-btn">复制：B22</a></li>
+		<li><a id="">打开编辑对应主题窗口</a></li>
+		<li><a class="cancel">取消</a></li>
+	</ul>
+<div  class="a" style="position: absolute;left: 100px;top: 100px;">
+<!-- <div id="floatboxright1" style="background-color:white">
+	<ul class="floatboxright_ul">
+		<li><a class="newOpen" href="http://192.168.6.79:3000/static/middleweb1/index.html" target="_blank">查看</a></li>
+		<li><a class="localopen" href="http://192.168.6.79:3000/static/middleweb1/index.html" >新增同位类</a></li>
+		<li><a class="localopen" href="http://192.168.6.79:3000/static/middleweb1/index.html" >新增下位类</a></li>
+		<li><a class="newOpen" href="http://192.168.6.79:3000/static/middleweb1/index.html" target="_blank">在本类前面新增说明类</a></li>
+		<li><a class="localopen" href="http://192.168.6.79:3000/static/middleweb1/index.html" >修改当前类</a></li>
+		<li><a class="localopen" href="http://192.168.6.79:3000/static/middleweb1/index.html" >剪切当前类</a></li>
+		<li><a class="newOpen" href="http://192.168.6.79:3000/static/middleweb1/index.html" target="_blank">停用当前类及其下位类</a></li>
+		<li><a class="localopen" href="http://192.168.6.79:3000/static/middleweb1/index.html" >删除当前类及其下位类</a></li>
+		<li><a class="localopen" href="http://192.168.6.79:3000/static/middleweb1/index.html" >取消</a></li>
+	</ul>
+<div  class="a" style="position: absolute;left: 100px;top: 100px;"> -->
+
+</div>
+	<!-- <iframe id="iframe" src=""></iframe> -->
+</div>
+</body>
+<script src="/static/Web_Edit/asset/bower_components/requirejs/require.js"></script>
+    <script type="text/javascript">
+        if (typeof OP_CONFIG === "object") {
+            require([Root_File+'asset/scripts/config.js'], function () {
+                require(['areas/' + OP_CONFIG.areas + '/' + OP_CONFIG.page + '/' + OP_CONFIG.view]);
+            });
+        }
+</script>
+</html>

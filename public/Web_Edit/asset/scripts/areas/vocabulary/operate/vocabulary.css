@@ -1,0 +1,89 @@
+	#test  
+        {  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            width: 400px;  
+            height: 300px;  
+            background: #f1f1f1;  
+            text-align: center;  
+            line-height: 100px;  
+            border: 1px solid #CCC;  
+            cursor: se-resize;  
+        }  
+		#theme0{
+			background-color: #ffcc99;
+			cursor: pointer;
+		}
+		#floatbox{
+			text-align: center;
+			position: absolute;
+			left: 200px;
+			top: 200px;
+			background-color: red;
+			padding-left:5px;
+			padding-bottom:5px;
+			padding-right:5px;
+			cursor: move;
+		}
+		#floatboxheader{
+			background-color: red;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top:-20px;
+			height: 20px;
+			font-size:12px;
+			cursor: pointer;
+		}
+		iframe{
+			width: 100%;
+			height: 100%;
+			border:none;
+		}
+		#floatboxright,#floatboxright1{
+			position: absolute;
+			left: -999px;
+			z-index: 999;
+			border:1px solid black;
+			min-width:200px;
+		}
+		.floatboxright_ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.floatboxright_ul a{
+			text-decoration: none;
+			color:black;
+			cursor: pointer;
+			width: 100%;
+			display: inline-block;
+			text-align: center;
+		}
+		.floatboxright_ul a:hover{
+			background-color: gray;
+		}
+		.open{
+			display: block;
+		}
+		.close{
+			display: none;
+		}
+
+		#locateshenyang{
+			cursor: pointer;
+		}
+		/*无极树*/
+		.menuTree {width: 29%;height:359px;overflow: auto;border: 2px solid #ddd;}
+		.menuTree div{ padding-left: 20px; }
+		.menuTree div ul{ overflow:hidden; display:none; height:auto;}
+		.menuTree span{ display:block; height:25px; line-height:25px; padding-left:5px; margin:1px 0; cursor:pointer; }
+		.menuTree span:hover{ background-color:#e6e6e6; color:#cf0404;}
+		.menuTree a{ color:#333; text-decoration:none;}
+		.menuTree a:hover{ color:#06F;}
+		.btn{ height:30px; margin-top:10px; border-bottom:1px solid #CCC;}
+		ul{
+			padding: 0;
+			margin:0;
+		}
