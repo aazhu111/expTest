@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="description" content="词表查询">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="/static/Web_Rent/asset/scripts/urlconfig.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/Web_Rent/asset/scripts/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Rent/asset/scripts/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Rent/asset/scripts/areas/manage/operate/manage.css">
+    <script>
+        var OP_CONFIG = { "areas": "manage","page":"operate","view":"manage_view" };
+    </script>
+</head>
+<body>
+<header>
+	
+	<div class="title">
+	我的店铺
+		<div class="headerlefticon"></div>
+	</div>
+</header>
+<main>
+	<div class="main-header">
+		<div class="main-left">
+			<i class="main-header-leftimg"></i>
+			<span class="largefont vtop">新开连锁店</span>
+		</div>
+		<div class="verticalseperateline"></div>
+		<div class="main-right">
+			<i class="main-header-rightimg"></i>
+			<span class="largefont vtop">绑定连锁店</span>
+		</div>
+	</div>
+	<div class="navigate">您当前分店</div>
+	<ul>
+		<li>
+		<div class="contain">
+			<i class="listimg"></i>
+			<div class="listcontent">
+				<div class="largefont topcontent">伊藤洋华堂-春熙路店</div>
+				<div class="middlecontent">
+					<i class="defaultstar"></i>
+					<i class="defaultstar"></i>
+					<i class="defaultstar"></i>
+					<i class="defaultstar"></i>
+					<i class="defaultstar"></i>
+				</div>
+				<div class="bottomcontent">
+					<span>当前账号  ttzyx123</span>
+					<span class="reviewed">审核中</span>
+				</div>
+				<a class="viewdetail hidden"></a>
+			</div>
+
+		</div>
+		<div class="listseperateline"></div>
+		</li>
+		<li>
+		<div class="contain">
+			<i class="listimg"></i>
+			<div class="listcontent">
+				<div class="largefont topcontent">伊藤洋华堂-锦华店</div>
+				<div class="middlecontent">
+					<i class="redstar"></i>
+					<i class="redstar"></i>
+					<i class="redstar"></i>
+					<i class="redstar"></i>
+					<i class="defaultstar"></i>
+				</div>
+				<div class="bottomcontent">
+					<span>当前账号  ttzyx123</span>
+					<span class="reviewed hidden">审核中</span>
+				</div>
+				<a class="viewdetail"></a>
+			</div>
+
+		</div>
+		<div class="listseperateline"></div>
+		</li>
+		<li>
+		<div class="contain">
+			<i class="listimg"></i>
+			<div class="listcontent">
+				<div class="largefont topcontent">伊藤洋华堂-双楠店</div>
+				<div class="middlecontent">
+					<i class="redstar"></i>
+					<i class="redstar"></i>
+					<i class="redstar"></i>
+					<i class="redstar"></i>
+					<i class="redstar"></i>
+				</div>
+				<div class="bottomcontent">
+					<span>当前账号  ttzyx123</span>
+					<span class="reviewed hidden">审核中</span>
+				</div>
+				<a class="viewdetail"></a>
+			</div>
+
+		</div>
+		<div class="listseperateline"></div>
+		</li>
+	</ul>
+</main>
+<footer>
+	<p></p>
+</footer>
+</body>
+<script src="/static/Web_Rent/asset/bower_components/requirejs/require.js"></script>
+    <script type="text/javascript">
+        if (typeof OP_CONFIG === "object") {
+            require([Root_File+'asset/scripts/config.js'], function () {
+                require(['areas/' + OP_CONFIG.areas + '/' + OP_CONFIG.page + '/' + OP_CONFIG.view]);
+            });
+        }
+</script>
+</html>

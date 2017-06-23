@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.2.7/avalon.min.js"></script>
+	 <script>
+            var vm = avalon.define({
+                $id: "test",
+                name: "司徒正美",
+                aaa: "xxxx",
+                array: [11,22,33],
+                toggle:false
+            })
+            setTimeout(function(){
+               vm.array.set(0, 444)
+               setTimeout(function(){
+               	vm.array.set(1, 222)
+               },3000)
+            }, 3000)
+            $(function(){
+            	$("select").change(function(){
+            		$("#getval").val(this.value)//给input标签传值
+            		$("#getval").attr("value",this.value)//给input标签value赋值
+            		console.log($("#getval").attr("value"));
+            		console.log(this.value);
+            	})
+            		
+            })
+        </script>
+</head>
+<body :controller="test">
+        <input :duplex="@name">
+        <div ms-skip='true' >{{@aaa}}</div>
+        <p>Hello,{{@name}}!</p>
+        <ul>
+           <li :for="($index,el) in @array">{{$index}}--{{el}}</li>
+        </ul>
+        <select style="width: 100px">
+        	<option selected="true" value="{1,2}">1</option>
+        	<option value="{1,2}">2</option>
+        	<option value="{1,2}">3</option>
+        	<option value="{1,2}">4</option>
+        	<option value="{1,2}">5</option>
+        </select>
+        <input id="getval" type="text" name="" value="">
+</body>
+</html>

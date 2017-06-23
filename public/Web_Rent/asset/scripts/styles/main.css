@@ -1,0 +1,79 @@
+html{
+    font-size:64px;
+}
+.returntitle{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    background-color: #db5054;
+    font-size: 0.5rem;
+    position: absolute;
+    left: 0.845rem;
+    top: 0;
+    bottom: 0;
+}
+.title{
+    color: white;
+    text-align: center;
+    background-color: #db5054;
+    font-size: 0.5rem;
+    position: relative;
+    width: 10rem;
+    height: 1.315rem;
+    line-height:1.315rem;
+}
+.headerlefticon{
+background: url(../../images/lefticon.png) no-repeat center center;
+background-size: 90% ; 
+-moz-background-size: 90%;
+color: white;
+width: 0.45rem;
+height:1.315rem;
+position: absolute;
+left: .359rem;
+top:0;
+z-index: 1;
+}
+.largefont{
+    font-size: 0.5rem;
+    color: #1c1c1c;
+
+}
+.vtop{
+    vertical-align: top;
+}
+.navigate{
+    width: 10rem;
+    height: 1rem;
+    font-size: 0.25rem;
+    background-color: #f3f4f6;
+    text-indent: .344rem;
+    line-height: 1rem;
+    color: #737373;
+}
+ul{
+    list-style: none;
+}
+/*红星和默认星星*/
+.defaultstar{
+    background:url(../../images/defaultstar.png) no-repeat;
+    background-size:cover;
+}
+.redstar{
+    background:url(../../images/redstar.png) no-repeat;
+    background-size:cover;
+}
+/*列表分割线*/
+.listseperateline{
+    width: 10rem;
+    height: 0.3125rem;
+    background-color:#f3f4f6;
+    border-top:1px solid #d4d4d4;
+}
+.viewdetail{
+    background:url(../../images/viewdetail.png) no-repeat;
+    background-size:cover;
+}
+.hidden{
+    display: none !important;
+}

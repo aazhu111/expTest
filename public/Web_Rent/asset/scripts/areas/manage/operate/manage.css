@@ -1,0 +1,127 @@
+.main-left,.main-right{
+	display: inline-block;
+	margin-left: 0.344rem;
+	width: 4.25rem;
+	height: 1.315rem;
+	line-height: 1.315rem;
+	padding-right: 0.39rem;;
+}
+.main-left span,.main-right span{
+	margin-left: 0.234rem;
+}
+.main-header-leftimg{
+	display: inline-block;
+	width: 1.315rem;
+	height: 1.315rem;
+	vertical-align: middle;
+	background:url("../../../../images/home.png") no-repeat center center;
+	background-size: 90%;
+	-moz-background-size: 90%;
+}
+.main-header-rightimg{
+	display: inline-block;
+	width: 1.315rem;
+	height: 1.315rem;
+	vertical-align: middle;
+	background:url("../../../../images/bind.png") no-repeat center center;
+	background-size: 90%;
+	-moz-background-size: 90%;
+}
+.verticalseperateline{
+	display: inline-block;
+	height: 1.875rem;
+	width: 0.0315rem;
+	vertical-align: middle;
+	background-color: #f3f4f6;
+}
+/*消除inline-block幽灵间距*/
+.main-header{
+	font-size: 0;
+	height: 1.875rem;
+	line-height: 1.875rem;
+}
+/*列表图片*/
+ul li{
+	font-size: 0;
+	width: 10rem;
+	/*height: 2.96875rem;*/
+	line-height: 2.96875rem;
+	
+}
+.listimg{
+	display: inline-block;
+	width: 1.8125rem;
+	height: 1.8125rem;
+	border:2px solid #e3e3e3;
+	margin:1px;
+	vertical-align: middle;
+	background:url(../../../../images/rummery.png) no-repeat ;
+	background-size: cover;
+	-moz-background-size: cover;
+}
+.listcontent{
+	display: inline-block;
+	vertical-align: middle;
+	height: 1.8125rem;
+	line-height: 1.874rem;
+	width: 7.4rem;
+	position: relative;
+
+}
+.contain{
+	margin-left: .344rem;
+	height: 2.640625rem;
+	line-height: 2.640625rem;
+}
+.topcontent{
+	display: block;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	color: #1c1c1c;
+	text-indent: 0.3rem;
+}
+.middlecontent{
+	display: block;
+	height: 0.8125rem;
+	padding-left: 0.3rem;
+	padding-top:0.1875rem;
+}
+.middlecontent i{
+	width: 0.344rem;
+	height: 0.344rem;
+	line-height: 0.344rem;
+	display: inline-block;
+	margin-right: 0.14rem;
+	vertical-align: top;
+
+}
+.bottomcontent{
+	width: 100%;
+	height: 0.359rem;
+	line-height: 0.359rem;
+	font-size: 0.359rem;
+}
+.bottomcontent span:nth-child(1){
+	color: #737373;
+	display:inline-block;
+	float: left;
+	margin-left: 0.3rem;
+}
+.bottomcontent span:nth-child(2){
+	color: #db5054;
+	display: inline-block;
+	float: right;
+	margin-right: 0.05rem;
+}
+/*查看详情*/
+.viewdetail{
+	display: inline-block;
+	width: 0.2rem;
+	height: 0.34375rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto
+
+}
