@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>批量查询</title>
+	<meta charset="utf-8">
+    <meta name="description" content="批量查询">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <script>
+        var Root_File = '/static/Web_Edit/';
+    </script>
+<link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/fonts/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/scripts/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/scripts/areas/vocabulary/batchquery.css">
+     <!--[if lte IE 9]>
+    <script src="/static/Web_Edit/asset/bower_components/respond/dest/respond.min.js"></script>
+    <script src="/static/Web_Edit/asset/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>
+        var OP_CONFIG = { "areas": "vocabulary","view":"batchquery_view" };
+    </script>
+</head>
+<body>
+<!-- content -->
+<header class="pageheader"></header>
+<main class="pagecontent course-design-box smmanage">
+    <div class="main-top-title mar-bot15">
+        <div class="title">批量检索</div>
+    </div>
+	<div class="contentheader">
+		<div class="choicelibrary">
+        <label class="mr15" style="">请选择相应库</label>
+        <select class="select form-control mr15">
+            <option value="1">正式库</option>         
+            <option value="2">临时库</option>         
+        </select>
+            <select class="selectnowidth form-control mr15">
+                <option>《中分表》</option>         
+                <option>《中图法》简本</option>         
+                <option>《中图法》期刊表</option>         
+                <option>《中图法》详本</option>         
+            </select>
+		<div class="highsearch">
+            <div id="multiquery1" class="multigroupquery">
+                <select class="selectnowidth form-control mr15">
+                    <option value="0">全部途径</option>
+                    <option value="1">分类途径</option>
+                    <option value="2">主题途径</option>
+                    <option value="3">类号</option>
+                    <option value="4">类名</option>
+                    <option value="5">类目注释</option>
+                    <option value="6">所属类目路径</option>
+                    <option value="7">所属类目路径</option>
+                    <option value="8">主题词</option>
+                    <option value="9">主题词英译名</option>
+                    <option value="10">主题词拼音</option>
+                    <option value="11">主题词注释</option>
+                    <option value="12">主题词注释</option>
+                    <option value="13">控制号</option>
+                    <option value="14">评注文字</option>
+                </select>
+                <select class="selectnowidth form-control mr15">
+                    <option value="0">任意一致</option>
+                    <option value="1">一体化扩检</option>
+                    <option value="2">完全一致</option>
+                    <option value="3">前方一致</option>
+                    <option value="4">完全一致</option>
+                </select>
+                <input type="" name="" class="form-control mr15">
+                <select class="selectnowidth form-control mr15">
+                    <option value="0">请选择组合条件</option>
+                    <option value="1">与</option>
+                    <option value="2">或</option>
+                    <option value="3">非</option>
+                </select>
+                <span class="mr15">+</span>
+                <span data-id="multiquery1 mr15">-</span>
+            </div>      
+            <div class="managequery">
+                <label></label>
+            </div>      
+        </div>
+	</div>
+	<div class="contentmain">
+     
+
+<table class="table-common">
+    <thead>
+        <tr>
+            <th>分类类型</th>
+            <th>分类号</th>
+            <th>类名</th>
+            <th>记录控制号</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+        <tbody class="result">
+            <tr>
+                <td>使用类</td>
+                <td>B2</td>
+                <td>中国哲学</td>
+                <td>c011246</td>
+                <td>
+                    <a title="编辑" class="iconfont icon-open-notes  edit"></a>
+                    <span title="删除" class="iconfont icon-open-delete offset-lg-1 delStrategy"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</main>
+<footer class="pagefooter"></footer>
+</body>
+<script src="/static/Web_Edit/asset/bower_components/requirejs/require.js"></script>
+    <script type="text/javascript">
+        if (typeof OP_CONFIG === "object") {
+            require([Root_File+'asset/scripts/config.js'], function () {
+                require(['areas/' + OP_CONFIG.areas + '/' + OP_CONFIG.view]);
+            });
+        }
+</script>
+</html>
