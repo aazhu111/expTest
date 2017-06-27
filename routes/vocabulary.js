@@ -96,5 +96,69 @@ module.exports = function(router) {
 		res.json(json);
 	});
 
-	/*module.exports = router;*/
+	router.post('/multigroupquery', function(req, res, next) {
+		var multigroupqueryjson = [{
+			"classifytype": "使用类",
+			"classifyid": "B2",
+			"classifyname": "中国哲学",
+			"recordcontrolnum": "c011246",
+		}, {
+			"classifytype": "起止类",
+			"classifyid": "B21/B26",
+			"classifyname": "B21/B26",
+			"recordcontrolnum": "c011245",
+		}, {
+			"classifytype": "交替类",
+			"classifyid": "B019.2",
+			"classifyname": "唯心主义",
+			"recordcontrolnum": "c011243",
+		}]
+		res.json(multigroupqueryjson);
+	});
+	var data = "";
+	router.get('/getweatherhtml', function(request, response, next) {
+		/*请求其它服务器数据渲染页面*/
+		var http = require('http');
+		http.get('http://192.168.6.30:8080/crowdfunding1/system/user/huTest.do?json=yanhao', (res) => {
+			const {
+				statusCode
+			} = res;
+			const contentType = res.headers['content-type'].split(";")[0];
+
+			let error;
+			if (statusCode !== 200) {
+				error = new Error('请求失败。\n' +
+					`状态码: ${statusCode}`);
+			} else if (!/^application\/json/.test(contentType)) {
+				error = new Error('无效的 content-type.\n' +
+					`期望 application/json 但获取的是 ${contentType}`);
+			}
+			if (error) {
+				console.error(error.message);
+				// 消耗响应数据以释放内存
+				res.resume();
+				return;
+			}
+
+			res.setEncoding('utf8');
+			let rawData = '';
+			res.on('data', (chunk) => {
+				rawData += chunk;
+
+			});
+			res.on('end', () => {
+				try {
+					
+					data = rawData;
+					const parsedData = JSON.parse(rawData);
+					console.log(parsedData);
+					response.json(parsedData);
+				} catch (e) {
+					console.error(e.message);
+				}
+			});
+		}).on('error', (e) => {
+			console.error(`错误: ${e.message}`);
+		});
+	});
 }
