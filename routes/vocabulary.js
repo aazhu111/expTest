@@ -95,7 +95,7 @@ module.exports = function(router) {
 		}]
 		res.json(json);
 	});
-
+	/*批量查询*/
 	router.post('/multigroupquery', function(req, res, next) {
 		var multigroupqueryjson = [{
 			"classifytype": "使用类",
@@ -115,6 +115,59 @@ module.exports = function(router) {
 		}]
 		res.json(multigroupqueryjson);
 	});
+	/**/
+	router.all('/getmarcdata',function(request,response,next){
+		var marcdata = [{
+			"marcverification": "",
+			"fieldnum": "001",
+			"designator": "",
+			"fieldname": "C055480",
+		},{
+			"marcverification": "",
+			"fieldnum": "005",
+			"designator": "",
+			"fieldname": "20170331092907.0",
+		},{
+			"marcverification": "",
+			"fieldnum": "024",
+			"designator": "",
+			"fieldname": "00000cw   2200000 a 45",
+		},{
+			"marcverification": "",
+			"fieldnum": "100",
+			"designator": "",
+			"fieldname": "^a20170417aaaaabbachiy0108      ea",
+		},{
+			"marcverification": "",
+			"fieldnum": "194",
+			"designator": "0 ",
+			"fieldname": "^aCLC^b中国图书馆分类法^c5^echi",
+		},{
+			"marcverification": "",
+			"fieldnum": "250",
+			"designator": "0 ",
+			"fieldname": "^d03^aB21^9B^h哲学^j",
+		},{
+			"marcverification": "",
+			"fieldnum": "330",
+			"designator": "0 ",
+			"fieldname": "^a中国哲学史、思想史、少数名族哲学史入此",
+		},{
+			"marcverification": "",
+			"fieldnum": "661",
+			"designator": "0 ",
+			"fieldname": "^^a各代哲学史入有关各时代。例：《先秦哲学思想史》 入B22",
+		},{
+			"marcverification": "",
+			"fieldnum": "801",
+			"designator": " 0 ",
+			"fieldname": "^aCN^bNLC^c20170331",
+		}];
+		response.json(marcdata);
+	})
+
+
+
 	var data = "";
 	router.get('/getweatherhtml', function(request, response, next) {
 		/*请求其它服务器数据渲染页面*/

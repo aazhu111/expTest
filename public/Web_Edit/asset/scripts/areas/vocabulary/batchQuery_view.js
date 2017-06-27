@@ -9,7 +9,7 @@ define(['common', 'utils/xhr', 'utils/copyutil', 'jquery'], function(common, xhr
 
 	$(function() {
 		var multigroupoajax = {
-			url: "http://192.168.6.79:8080/multigroupquery",
+			url: "http://localhost:8080/getmarcdata",
 			type: "post",
 			dataType: "json",
 			data: {
@@ -31,7 +31,7 @@ define(['common', 'utils/xhr', 'utils/copyutil', 'jquery'], function(common, xhr
 				for(var i =0;i<data.length;i++){
 				tbody += 
 					'<tr>' +
-					'<td>' + data[i].classifyid + '</td>' +
+					'<td>' + data[i].classifytype + '</td>' +
 					'<td>' + data[i].classifyid + '</td>' +
 					'<td>' + data[i].classifyname + '</td>' +
 					'<td>' + data[i].recordcontrolnum + '</td>' +
