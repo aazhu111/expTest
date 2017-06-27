@@ -52,13 +52,6 @@ define(['jquery'], function($) {
                     if (data == '{}') {
                         data = null;
                     }
-                    //用户登录逻辑
-                   /* if (typeof data === "object" && JSON.stringify(data) == '{"Error":"对不起您没有数据访问权限！"}') {
-                        $.cookie('openSpace', '', { expires: -1,path: '/' });
-                        $.cookie('openUserToken', '', { expires: -1,path: '/' });
-                        $.cookie('openUserInfo', '', { expires: -1,path: '/' });
-                        top.location.href = '/Account/User/Login';
-                    }*/
                     settings.success(data);
                 }
             }
