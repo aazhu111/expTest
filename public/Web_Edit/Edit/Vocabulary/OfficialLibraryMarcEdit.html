@@ -9,6 +9,7 @@
     <meta name="renderer" content="webkit">
     <script>
         var Root_File = '/static/Web_Edit/';
+        var WebApi_Edit = 'http://192.168.6.79:8080';
     </script>
 <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/fonts/iconfont.css">
     <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap.css">
@@ -36,6 +37,28 @@
 </main>
 <footer class="pagefooter"></footer>
 </body>
+<!-- marc分类模板 -->
+ <script id="marcClassifyTemplate" type="text/x-handlebars-template">
+
+      
+</script>
+<!-- marc主题模板 -->
+ <script id="marcThemeTemplate" type="text/x-handlebars-template">
+ <table class="table-common">
+    <thead>
+    <tr>
+    <th>校验</th><th>字段号</th><th>指示符</th><th>字段内容</th><th>操作</th></tr>
+    </thead>
+    </tbody>
+            {{#each data}}
+            {{debug this}}
+            {{/each}}
+    </tbody>
+</table>
+</script>
+
+
+
 <script src="/static/Web_Edit/asset/bower_components/requirejs/require.js"></script>
     <script type="text/javascript">
         if (typeof OP_CONFIG === "object") {

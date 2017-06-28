@@ -9,6 +9,7 @@
     <meta name="renderer" content="webkit">
     <script>
         var Root_File = '/static/Web_Edit/';
+        var WebApi_Edit = 'http://192.168.6.79:8080';
     </script>
 <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/fonts/iconfont.css">
     <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap.css">
@@ -33,7 +34,7 @@
     </div>
 	<div class="contentheader">
 		<div class="choicelibrary">
-        <label class="mr15" style="">请选择相应库</label>
+        <label class="mr15">请选择相应库</label>
         <select class="select form-control mr15">
             <option value="1">正式库</option>         
             <option value="2">临时库</option>         
@@ -45,7 +46,7 @@
                 <option value="3">《中图法》详本</option>         
             </select>
 		<div class="highsearch">
-            <div id="multiquery1" class="multigroupquery">
+            <div id="multiquery1" class="multigroupquery mt15">
                 <select class="selectnowidth form-control mr15">
                     <option value="0">全部途径</option>
                     <option value="1">分类途径</option>
@@ -77,15 +78,59 @@
                     <option value="2">或</option>
                     <option value="3">非</option>
                 </select>
-                <span class="mr15">+</span>
-                <span data-id="multiquery1 mr15">-</span>
-            </div>      
-            <div class="managequery">
-                <label></label>
-            </div>      
+                <span class="mr15 highsearchadd"></span>
+            </div>  
+            <div class="managequery mt15">
+                <label class="mr15">数据状态</label>
+                <select class="selectnowidth form-control mr15">
+                    <option value="0">全部</option>
+                    <option value="1">草稿</option>
+                    <option value="2">待审核</option>
+                    <option value="3">已普通审核</option>
+                    <option value="4">已终极审核</option>
+                    <option value="5">发布</option>
+                </select>
+                <label class="mr15">数据类型</label>
+                <select class="selectnowidth form-control mr15">
+                    <option value="0">全部</option>
+                    <option value="1">分类</option>
+                    <option value="2">主题</option>
+                </select>
+                <label class="mr15">批号</label>
+                <select class="selectnowidth form-control mr15">
+                    <option value="1">导入批号</option>
+                    <option value="2">编辑批号</option>
+                </select>
+                <input type="text" class="form-control mr15" name="" value="" >
+                <label class="">指定学科</label>
+                <input type="text" class="form-control mr15" name="" value="" >
+                <label class="">类级</label>
+                <input type="text" class="form-control mr15" name="" value="" >
+            </div>
+            <div id="fieldquery1" class="fieldquery mt15">
+                <label class="">字段号</label>
+                <input type="text" class="width70 form-control mr15" name="" value="" >
+                <label class="">指示符</label>
+                <input type="text" class=" width50 form-control mr15" name="" value="" ">
+                <label class="">子字段</label>
+                <input type="text" class="form-control mr15" name="" value="" >
+                <label class="">检索字段内容</label>
+                <input type="text" class="form-control mr15" name="" value="" >
+                <label class="">起位置</label>
+                <input type="text" class="width50 form-control mr15" name="" value="" >
+                <label class="">止位置</label>
+                <input type="text" class="width50 form-control mr15" name="" value="" >
+                <select class="selectnowidth form-control mr15">
+                    <option value="0">请选择组合条件</option>
+                    <option value="1">与</option>
+                    <option value="2">或</option>
+                    <option value="3">非</option>
+                </select>
+                <span class="mr15 fieldqueryadd"></span>
+            </div>           
         </div>
 	</div>
-	<div id="wrapper" class="contentmain">
+	<div id="wrapper" class="contentmain mt15">
      
     </div>
 </main>

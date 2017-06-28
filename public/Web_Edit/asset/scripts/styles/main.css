@@ -11,7 +11,6 @@ html, body {
 }
 
 body {
-    overflow-y: scroll;
     min-width: 1220px;
 }
 
@@ -2183,6 +2182,32 @@ label{
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
+/*距离*/
 .mr15{
 	margin-right:15px;
+}
+.mt15{
+    margin-top: 15px;
+}
+.widh100{
+    width: 100px;
+}
+.width50{
+    width: 50px;
+}
+.width70{
+    width: 70px;
+}
+.highsearchadd,.fieldqueryadd{
+    background: url("../../images/add.png") no-repeat;
+}
+.highsearchdel,.fieldquerydel{
+    background: url("../../images/delete.png") no-repeat;
+}
+.highsearchadd,.highsearchdel,.fieldqueryadd,.fieldquerydel{
+    display: inline-block;
+    vertical-align: middle;
+    width:30px;
+    height: 30px;
+    background-size:30px 30px;
 }

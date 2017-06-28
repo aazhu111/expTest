@@ -5,6 +5,7 @@ require.config({
     paths: {
         'jquery': '../bower_components/jquery/jquery',
         'clipboard': '../bower_components/clipboard/clipboard.min',
+        'handlebars': '../bower_components/handlebars/handlebars'
     },
     map: {
         '*': {
