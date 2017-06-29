@@ -5,7 +5,7 @@
  * @param  {Object} xhr)        {               var ajax [description]
  * @return {[type]}             [description]
  */
-define(['jquery', 'common', 'utils/xhr', 'utils/copyutil', 'handlebars'], function($, common,  xhr, ClipBoard,  Handlebars ) {
+define(['jquery', 'common', 'utils/xhr', 'utils/formatter', 'handlebars'], function($, common,  xhr, ClipBoard,  Handlebars ) {
 
 	$(function() {
 		var multigroupoajax = {
@@ -16,58 +16,14 @@ define(['jquery', 'common', 'utils/xhr', 'utils/copyutil', 'handlebars'], functi
 				"num": 1,
 			},
 			success: function(data) {
-				/*var thead =
-					'<thead>' +
-					'<tr>' +
-					'<th>校验</th>' +
-					'<th>字段号</th>' +
-					'<th>指示符</th>' +
-					'<th>字段内容</th>' +
-					'<th>操作</th>' +
-					'</tr>' +
-					'</thead>' +
-					'<tbody class="result">';
-				var tbody = "";
-				for (var i = 0; i < data.length; i++) {
-					tbody +=
-						'<tr>' +
-						'<td>' + data[i].marcverification + '</td>' +
-						'<td>' + data[i].fieldnum + '</td>' +
-						'<td>' + data[i].designator + '</td>' +
-						'<td style="text-align:left;">' + data[i].fieldname + '</td>' +
-						' <td>' +
-						'<a title="编辑" class="iconfont icon-open-plus add"></a>' +
-						'<span title="删除" class="iconfont icon-open-delete offset-lg-1 del"></span>' +
-						'</td>' +
-						'</tr>';
-				}
-
-				var tabletmplate =
-					'<table class="table-common">' + thead + tbody + '</tbody></table>';
-				$("#wrapper").html(tabletmplate);*/
-				var template = Handlebars.compile($("#marcClassifyTemplate").html());
+				var template = Handlebars.compile($("#marcThemeTemplate").html());
 				var renderHTML = template(data);
 				$("#wrapper").html(renderHTML);
+				var width = $(".autoinput").parent().width() - $(".marccontent").width();
+				$(".autoinput").css({"width":width});
 			}
 		}
 		xhr.callAjax(multigroupoajax);
 
-
-
-		Handlebars.registerHelper("debug", function(data) {
-			var tbody = "";
-			tbody +=
-				'<tr>' +
-				'<td>' + data.marcverification + '</td>' +
-				'<td>' + data.fieldnum + '</td>' +
-				'<td>' + data.designator + '</td>' +
-				'<td style="text-align:left;">' + data.fieldname + '</td>' +
-				' <td>' +
-				'<a title="编辑" class="iconfont icon-open-plus add"></a>' +
-				'<span title="删除" class="iconfont icon-open-delete offset-lg-1 del"></span>' +
-				'</td>' +
-				'</tr>';
-			return tbody;
-		});
 	});
 });

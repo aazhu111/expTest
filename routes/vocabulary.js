@@ -121,47 +121,96 @@ module.exports = function(router) {
 			"marcverification": "",
 			"fieldnum": "001",
 			"designator": "",
-			"fieldname": "C055480",
+			"fieldcontent": "C055480",
 		},{
 			"marcverification": "",
 			"fieldnum": "005",
 			"designator": "",
-			"fieldname": "20170331092907.0",
+			"fieldcontent": "20170331092907.0",
 		},{
 			"marcverification": "",
 			"fieldnum": "024",
 			"designator": "",
-			"fieldname": "00000cw   2200000 a 45",
+			"fieldcontent": "00000cw   2200000 a 45",
 		},{
 			"marcverification": "",
 			"fieldnum": "100",
 			"designator": "",
-			"fieldname": "^a20170417aaaaabbachiy0108      ea",
+			"fieldcontent": "^a20170417aaaa abbachiy0108      ea",
 		},{
 			"marcverification": "",
-			"fieldnum": "194",
+			"fieldnum": "184",
 			"designator": "0 ",
-			"fieldname": "^aCLC^b中国图书馆分类法^c5^echi",
+			"fieldcontent": "^aCLC^b中国图书馆分类法^c5^echi",
 		},{
 			"marcverification": "",
 			"fieldnum": "250",
 			"designator": "0 ",
-			"fieldname": "^d03^aB21^9B^h哲学^j",
+			"fieldcontent": "^d03^aB21^9B^h哲学^j",
 		},{
 			"marcverification": "",
 			"fieldnum": "330",
 			"designator": "0 ",
-			"fieldname": "^a中国哲学史、思想史、少数名族哲学史入此",
+			"fieldcontent": "^a运用马克思列宁主义、毛泽东思想、邓小平理论对各学科门类的专题研究，按其内容分入有关各类。例：马克思主义哲学入B0-0，科学社会主义理论入D0-0，马克思主义政治经济学入F0-0",
 		},{
 			"marcverification": "",
 			"fieldnum": "661",
 			"designator": "0 ",
-			"fieldname": "^^a各代哲学史入有关各时代。例：《先秦哲学思想史》 入B22",
+			"fieldcontent": "^a各代哲学史入有关各时代。例：《先秦哲学思想史》 入B22",
 		},{
 			"marcverification": "",
 			"fieldnum": "801",
 			"designator": " 0 ",
-			"fieldname": "^aCN^bNLC^c20170331",
+			"fieldcontent": "^aCN^bNLC^c20170331",
+		}];
+		response.json(marcdata);
+	});
+	router.all('/addmarcdata',function(request,response,next){
+		var marcdata = [{
+			"marcverification": "",
+			"fieldnum": "001",
+			"designator": "",
+			"fieldcontent": "C055480",
+		},{
+			"marcverification": "",
+			"fieldnum": "005",
+			"designator": "",
+			"fieldcontent": "2017031092907.0",
+		},{
+			"marcverification": "",
+			"fieldnum": "024",
+			"designator": "",
+			"fieldcontent": "00000nw   2200000 a 45",
+		},{
+			"marcverification": "",
+			"fieldnum": "100",
+			"designator": "",
+			"fieldcontent": "^a20170417aaaa abbachiy0108      ea",
+		},{
+			"marcverification": "",
+			"fieldnum": "184",
+			"designator": "0 ",
+			"fieldcontent": "^aCLC^b中国图书馆分类法^c5^echi",
+		},{
+			"marcverification": "",
+			"fieldnum": "250",
+			"designator": "0 ",
+			"fieldcontent": "^d03^a^9B^h哲学",
+		},{
+			"marcverification": "",
+			"fieldnum": "330",
+			"designator": "0 ",
+			"fieldcontent": "^a运用马克思列宁主义、毛泽东思想、邓小平理论对各学科门类的专题研究，按其内容分入有关各类。例：马克思主义哲学入B0-0，科学社会主义理论入D0-0，马克思主义政治经济学入F0-0",
+		},{
+			"marcverification": "",
+			"fieldnum": "661",
+			"designator": "0 ",
+			"fieldcontent": "^a各代哲学史入有关各时代。例：《先秦哲学思想史》 入B22",
+		},{
+			"marcverification": "",
+			"fieldnum": "801",
+			"designator": " 0 ",
+			"fieldcontent": "^aCN^bNLC^c20170331",
 		}];
 		response.json(marcdata);
 	})

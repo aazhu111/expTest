@@ -2189,6 +2189,9 @@ label{
 .mt15{
     margin-top: 15px;
 }
+.width30{
+    width: 30px;
+}
 .widh100{
     width: 100px;
 }
@@ -2198,6 +2201,19 @@ label{
 .width70{
     width: 70px;
 }
+.width100\%{
+    width: 100%;
+}
+.table-common .tlleft{
+    text-align:left;
+}
+.borderl2t{
+    border-left:2px solid transparent;
+}
+.displayib{
+    display: inline-block;
+}
+
 .highsearchadd,.fieldqueryadd{
     background: url("../../images/add.png") no-repeat;
 }
@@ -2210,4 +2226,15 @@ label{
     width:30px;
     height: 30px;
     background-size:30px 30px;
+}
+
+/*mrc编辑公共样式*/
+.disablededit{
+ color: #0066d6;
+}
+.black{
+color: #000 !important;
+}
+.red{
+    color:red !important;
 }

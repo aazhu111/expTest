@@ -52,7 +52,7 @@ define(['common', 'utils/xhr', 'utils/copyutil', 'jquery'], function(common, xhr
             var fieldquerytemplate = 
                 '<label class="">字段号</label> '+
                 '<input type="text" class="width70 form-control mr15" name="" value="" > '+
-                '<label class="">指示符</label>'+
+                '<label class="">指示符</label> '+
                 '<input type="text" class=" width50 form-control mr15" name="" value="" "> '+
                 '<label class="">子字段</label> '+
                 '<input type="text" class="form-control mr15" name="" value="" > '+

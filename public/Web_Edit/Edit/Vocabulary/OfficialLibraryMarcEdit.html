@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/fonts/iconfont.css">
     <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap-reboot.css">
+  <!--   <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap-reboot.css"> -->
     <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/scripts/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/scripts/areas/vocabulary/officiallibrarymarcedit.css">
      <!--[if lte IE 9]>
@@ -30,7 +30,7 @@
 <header class="pageheader"></header>
 <main class="pagecontent course-design-box smmanage">
     <div class="main-top-title mar-bot15">
-        <div class="title">表单编辑</div>
+        <div class="title">marc编辑</div>
     </div>
     <div id="wrapper" class="contentmain">
     </div>
@@ -50,8 +50,14 @@
     <th>校验</th><th>字段号</th><th>指示符</th><th>字段内容</th><th>操作</th></tr>
     </thead>
     </tbody>
-            {{#each data}}
-            {{debug this}}
+            {{#each this}}
+             <tr>
+                <td>{{{marcverification marcverification @index}}}</td>
+                <td>{{{fieldnum fieldnum @index}}}</td>
+                <td>{{{designator designator fieldnum @index}}}</td>
+                <td class="tlleft disablededit">{{{fieldcontent fieldcontent fieldnum}}}</td>
+                <td>{{{marcoperatebtn @index}}}</td>
+            </tr>
             {{/each}}
     </tbody>
 </table>
