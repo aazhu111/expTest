@@ -1,0 +1,9 @@
+.themearealeft{
+	width: 14%;
+	padding-right: 2em;
+	text-align: right;
+	line-height: 40px;
+}
+.themearearight{
+	flex-grow: 1;
+}

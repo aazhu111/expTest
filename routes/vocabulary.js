@@ -200,12 +200,12 @@ module.exports = function(router) {
 			"marcverification": "",
 			"fieldnum": "330",
 			"designator": "0 ",
-			"fieldcontent": "^a运用马克思列宁主义、毛泽东思想、邓小平理论对各学科门类的专题研究，按其内容分入有关各类。例：马克思主义哲学入B0-0，科学社会主义理论入D0-0，马克思主义政治经济学入F0-0",
+			"fieldcontent": "^",
 		},{
 			"marcverification": "",
 			"fieldnum": "661",
 			"designator": "0 ",
-			"fieldcontent": "^a各代哲学史入有关各时代。例：《先秦哲学思想史》 入B22",
+			"fieldcontent": "^",
 		},{
 			"marcverification": "",
 			"fieldnum": "801",

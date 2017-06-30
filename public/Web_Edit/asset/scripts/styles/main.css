@@ -2238,3 +2238,25 @@ color: #000 !important;
 .red{
     color:red !important;
 }
+.inputreadonly{
+    outline: none;
+    border:none;
+    background: white !important;
+}
+.formh4{
+    text-indent: 1em;
+    text-align:left;
+}
+.formcontent{
+    border:1px solid #ccc;
+}
+.note{
+    padding:0 1em 1em 1em;
+}
+.note textarea{
+    width: 100%;
+    border:1px solid #ccc;
+}
+.flex{
+    display: flex;
+}

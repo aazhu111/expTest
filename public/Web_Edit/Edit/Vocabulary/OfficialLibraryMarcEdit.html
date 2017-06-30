@@ -53,16 +53,22 @@
             {{#each this}}
              <tr>
                 <td>{{{marcverification marcverification @index}}}</td>
-                <td>{{{fieldnum fieldnum @index}}}</td>
-                <td>{{{designator designator fieldnum @index}}}</td>
-                <td class="tlleft disablededit">{{{fieldcontent fieldcontent fieldnum}}}</td>
-                <td>{{{marcoperatebtn @index}}}</td>
+                <td>{{{fieldnum fieldnum @index false}}}</td>
+                <td>{{{designator designator fieldnum @index false}}}</td>
+                <td class="tlleft disablededit">{{{fieldcontent fieldcontent fieldnum false}}}</td>
+                <td>{{{marcoperatebtn @index 0}}}</td>
             </tr>
             {{/each}}
     </tbody>
 </table>
 </script>
-
+<script id="marcSingleLineAdd" type="text/x-handlebars-template">
+                <td>{{{marcverification marcverification @index}}}</td>
+                <td>{{{fieldnum fieldnum @index true}}}</td>
+                <td>{{{designator designator fieldnum @index true}}}</td>
+                <td class="tlleft disablededit">{{{fieldcontent fieldcontent fieldnum true}}}</td>
+                <td>{{{marcoperatebtn @index 1 }}}</td>
+</script>
 
 
 <script src="/static/Web_Edit/asset/bower_components/requirejs/require.js"></script>
