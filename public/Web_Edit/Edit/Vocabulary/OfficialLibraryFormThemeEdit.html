@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单编辑</title>
+    <meta charset="utf-8">
+    <meta name="description" content="marc编辑">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <script>
+        var Root_File = '/static/Web_Edit/';
+        var WebApi_Edit = 'http://192.168.6.79:8080';
+    </script>
+<link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/fonts/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/bower_components/bootstrape/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/scripts/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/Web_Edit/asset/scripts/areas/vocabulary/officiallibraryformthemeedit.css">
+     <!--[if lte IE 9]>
+    <script src="/static/Web_Edit/asset/bower_components/respond/dest/respond.min.js"></script>
+    <script src="/static/Web_Edit/asset/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>
+        var OP_CONFIG = { "areas": "vocabulary","view":"officiallibraryformthemeedit_view" };
+    </script>
+</head>
+<body>
+<!-- content -->
+<header class="pageheader"></header>
+<main class="pagecontent course-design-box smmanage">
+    <div class="main-top-title mar-bot15">
+        <div class="title">表单编辑</div>
+    </div>
+    <div id="wrapper" class="contentmain">
+    <div>
+        <label class="mr15">主题类型</label>
+        <select class="select form-control mr15">
+            <option value="1">250普通主题词</option>         
+            <option value="2">200个人名称主题</option>         
+            <option value="3">210团体名称主题</option>         
+            <option value="4">210会议名称主题</option>         
+            <option value="5" selected="selected">215地区名称主题词</option>         
+            <option value="6">220家族名称主题词</option>         
+            <option value="7">230统一题名主题词</option>         
+        </select>
+        <label class="">操作状态</label>
+        <input type="text" class="form-control mr15 inputreadonly"  disabled name="" value="修改" >
+        <label class="">审核状态</label>
+        <input type="text" class="form-control mr15 inputreadonly" name="" disabled value="未审核" >
+    </div>
+    <div class="mt15">
+       <label class="">主题词</label>
+        <input type="text" class="form-control mr15" name="" value="" >
+        <label class="">汉语拼音</label>
+        <input type="text" class="form-control mr15" name="" value="" >
+        <label class="">英译名</label>
+        <input type="text" class="form-control mr15" name="" value="" >
+        <label class="">记录控制号</label>
+        <input type="text" class="form-control mr15 inputreadonly" disabled name="" value="S011146" >
+    </div>
+    <div class="mt15 formcontent operate">
+        <h4 class="formh4 mt15">注释区</h4><span class="mr15 themeadd  h4span hide"></span>
+        <div class="note">
+            <label class="" style="margin-right: 100px">注释</label>
+                <select class="selectnowidth form-control mr15">
+                    <option value="330">一般范围注释（330）</option>
+                    <option value="343">一般信息注释（300）</option>
+                    <option value="353">相关参照注释（305）</option>
+                    <option value="661">单纯参照注释（310）</option>
+                    <option value="663">说明参照注释（320）</option>
+                    <option value="668">参考数据来源（810）</option>
+                    <option value="669">编目员注释（830）</option>
+                    <option value="825">已删标目说明（835）</option>
+                    <option value="830">已查阅但无参考数据的资料（815）</option>
+                    <option value="875">使用或范围说明（820）</option>
+                    <option value="662">注例（825） </option>
+                </select>
+                <span class="mr15 fieldqueryadd" data-operate="0"></span>
+                <span class="mr15 fieldquerydel"></span>
+                <div class="mt15">
+                    <textarea  rows="3"></textarea>
+                </div>
+        </div>
+    </div>
+    <div class="mt15 formcontent">
+        <h4 class="formh4 mt15">对应分类区</h4>
+        <div class="note">
+            <div class="mt15  formcontent operate" style="padding-left: 15px; padding-bottom: 15px;">     
+                <div class="displayib mt15">
+                    <label class="mr15 width50">代项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="1"></span>
+                    <span class="mr15 fieldquerydel"></span>
+                </div>
+            </div>     
+            <div class="mt15  formcontent operate" style="padding-left: 15px; padding-bottom: 15px;">     
+                <div class="displayib mt15">
+                    <label class="mr15 width50">属项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="2"></span>
+                    <span class="mr15 fieldquerydel"></span>
+                </div>
+            </div>     
+            <div class="mt15  formcontent operate" style="padding-left: 15px; padding-bottom: 15px;">     
+                <div class="displayib mt15">
+                    <label class="mr15 width50">分项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="3"></span>
+                    <span class="mr15 fieldquerydel"></span>
+                </div>
+            </div>     
+            <div class="mt15  formcontent operate" style="padding-left: 15px; padding-bottom: 15px;">     
+                <div class="displayib mt15">
+                    <label class="mr15 width50">族项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd " data-operate="4"></span>
+                    <span class="mr15 fieldquerydel"></span>
+                </div>
+            </div>     
+            <div class="mt15  formcontent operate" style="padding-left: 15px; padding-bottom: 15px;">     
+                <div class="displayib mt15">
+                    <label class="mr15 width50">参项词</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="5"></span>
+                    <span class="mr15 fieldquerydel"></span>
+                </div>
+            </div> 
+        </div> 
+    </div>
+     <div class="mt15 formcontent">
+         <h4 class="formh4 mt15">对应分类区</h4>
+        <div class="note">
+            <div class="mt15  formcontent operate" style="padding-left: 15px; padding-bottom: 15px;">     
+                <div class="displayib mt15">
+                    <label class="mr15  width50">分类号</label>
+                    <select class="selectnowidth form-control">
+                        <option>请选择对应关系</option>
+                        <option>主类号</option>
+                        <option>次类号</option>
+                        <option>交替类号</option>
+                    </select>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="6"></span>
+                    <span class="mr15 fieldquerydel"></span>
+                </div>
+            </div> 
+        </div>                
+    </div>  
+
+</main>
+<footer class="pagefooter"></footer>
+</body>
+<script id="ThemeFormTemplate0" type="text/x-handlebars-template">
+            <label class="" style="margin-right: 100px">注释</label>
+                <select class="selectnowidth form-control mr15">
+                    <option value="330">一般范围注释（330）</option>
+                    <option value="343">一般信息注释（300）</option>
+                    <option value="353">相关参照注释（305）</option>
+                    <option value="661">单纯参照注释（310）</option>
+                    <option value="663">说明参照注释（320）</option>
+                    <option value="668">参考数据来源（810）</option>
+                    <option value="669">编目员注释（830）</option>
+                    <option value="825">已删标目说明（835）</option>
+                    <option value="830">已查阅但无参考数据的资料（815）</option>
+                    <option value="875">使用或范围说明（820）</option>
+                    <option value="662">注例（825） </option>
+                </select>
+                <span class="mr15 fieldqueryadd" data-operate="0"></span>
+                <span class="mr15 fieldquerydel"></span>
+                <div class="mt15">
+                    <textarea  rows="3"></textarea>
+                </div>
+</script>
+<script id="ThemeFormTemplate1" type="text/x-handlebars-template">
+                    <label class="mr15 width50">代项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="1"></span>
+                    <span class="mr15 fieldquerydel"></span>
+</script>
+<script id="ThemeFormTemplate2" type="text/x-handlebars-template">
+                    <label class="mr15 width50">属项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="2"></span>
+                    <span class="mr15 fieldquerydel"></span>
+</script>
+<script id="ThemeFormTemplate3" type="text/x-handlebars-template">
+                    <label class="mr15 width50">分项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="3"></span>
+                    <span class="mr15 fieldquerydel"></span>
+</script>
+<script id="ThemeFormTemplate4" type="text/x-handlebars-template">
+                    <label class="mr15 width50">族项</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd " data-operate="4"></span>
+                    <span class="mr15 fieldquerydel"></span>
+</script>
+<script id="ThemeFormTemplate5" type="text/x-handlebars-template">
+                    <label class="mr15 width50">参项词</label>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="5"></span>
+                    <span class="mr15 fieldquerydel"></span>
+</script>
+<script id="ThemeFormTemplate6" type="text/x-handlebars-template">
+                    <label class="mr15  width50">分类号</label>
+                    <select class="selectnowidth form-control">
+                        <option>请选择对应关系</option>
+                        <option>主类号</option>
+                        <option>次类号</option>
+                        <option>交替类号</option>
+                    </select>
+                    <input type="text" class="form-control mr15 " name="" value="" >
+                    <span class="mr15 fieldqueryadd" data-operate="6"></span>
+                    <span class="mr15 fieldquerydel"></span>
+</script>
+</script>
+<script src="/static/Web_Edit/asset/bower_components/requirejs/require.js"></script>
+    <script type="text/javascript">
+        if (typeof OP_CONFIG === "object") {
+            require([Root_File+'asset/scripts/config.js'], function () {
+                require(['areas/' + OP_CONFIG.areas + '/' + OP_CONFIG.view]);
+            });
+        }
+</script>
+
+</html>
+
+
