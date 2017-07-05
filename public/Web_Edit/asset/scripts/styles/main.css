@@ -2214,13 +2214,13 @@ label{
     display: inline-block;
 }
 
-.highsearchadd,.fieldqueryadd{
+.highsearchadd,.fieldqueryadd,.themeadd{
     background: url("../../images/add.png") no-repeat;
 }
 .highsearchdel,.fieldquerydel{
     background: url("../../images/delete.png") no-repeat;
 }
-.highsearchadd,.highsearchdel,.fieldqueryadd,.fieldquerydel{
+.highsearchadd,.highsearchdel,.fieldqueryadd,.fieldquerydel,.themeadd{
     display: inline-block;
     vertical-align: middle;
     width:30px;
@@ -2259,4 +2259,13 @@ color: #000 !important;
 }
 .flex{
     display: flex;
+}
+.fg1{
+    flex-grow: 1;
+}
+.fg5{
+    flex-grow: 5;
+}
+.hide{
+    display: none;
 }

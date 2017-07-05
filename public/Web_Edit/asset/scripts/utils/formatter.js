@@ -138,24 +138,6 @@ define(function() {
         }
     };
 
-
-    /**
-     * 发布与状态
-     * @param {[type]} n [description]
-     */
-    trans.publishstatus = function(n) {
-        switch (n) {
-            case 1:
-                return "已发布";
-            case 2:
-                return "已发布";
-            case 3:
-                return "已发布";
-            case 0:
-                return "未发布";
-        }
-    };
-
     /**
      * 将int类型状态改为string
      * @param  {[type]} n [description]
@@ -319,280 +301,576 @@ define(function() {
      * @param  {[type]} meetingflag [description]
      * @return {Object} obj}   [description]
      */
-    fmt.marcClassifyFormate = function(fieldnum, flag,meetingflag) {
+    fmt.marcClassifyFormate = function(type, fieldnum, flag, meetingflag) {
         var obj;
-        switch (fieldnum) {
-            case "001":
-                {
-                    obj = {
-                        designator: "",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-            case "003":
-                {
-                    obj = {
-                        designator: "",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "035":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "100":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "250":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "254":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "330":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "343":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "353":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "453":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "553":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "661":
-                {
-                    obj = {
-                        designator: " 0",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "662":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "663":
-                {
-                    obj = {
-                        designator: "10",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "665":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "668":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "669":
-                {
-                    obj = {
-                        designator: " 0",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "700":
-                {
-                    obj = {
-                        designator: " 0",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                case "710":
-                {   /*如果710是团队会议否则*/
-                    var obj = meetingflag ?
-                     {
-                        designator: "02",
-                        fieldcontent: ""
-                    } :
+        if (type === "classify") {
+            switch (fieldnum) {
+                case "001":
                     {
-                        designator: "12",
-                        fieldcontent: ""
-                    }
-                };
-                break;
+                        obj = {
+                            designator: "",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "003":
+                    {
+                        obj = {
+                            designator: "",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "035":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "100":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "250":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "254":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "330":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "343":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "353":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "453":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "553":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "661":
+                    {
+                        obj = {
+                            designator: " 0",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "662":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "663":
+                    {
+                        obj = {
+                            designator: "10",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "665":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "668":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "669":
+                    {
+                        obj = {
+                            designator: " 0",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "700":
+                    {
+                        obj = {
+                            designator: " 0",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "710":
+                    { /*如果710是团队会议否则*/
+                        var obj = meetingflag ? {
+                            designator: "02",
+                            fieldcontent: ""
+                        } : {
+                            designator: "12",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
                 case "720":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "730":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "750":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "751":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "753":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "754":
-                {
-                    obj = {
-                        designator: "",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "801":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "804":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "820":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "825":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "830":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "856":
-                {
-                    obj = {
-                        designator: "  ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "875":
-                {
-                    obj = {
-                        designator: "28",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                  case "876":
-                {
-                    obj = {
-                        designator: "0 ",
-                        fieldcontent: ""
-                    }
-                };
-                break;
-                default: {obj = false;alert("输入的字段号不存在")};
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "730":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "750":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "751":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "753":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "754":
+                    {
+                        obj = {
+                            designator: "",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "801":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "804":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "820":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "825":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "830":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "856":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "875":
+                    {
+                        obj = {
+                            designator: "28",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "876":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                default:
+                    {
+                        obj = false;alert("输入的字段号不存在")
+                    };
+            }
         }
+        if (type === "theme") {
+            switch (fieldnum) {
+                case "001":
+                    {
+                        obj = {
+                            designator: "",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "005":
+                    {
+                        obj = {
+                            designator: "",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "100":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "200":
+                    {
+                        obj = {
+                            designator: "0 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "210":
+                    {
+                        /*如果210是团队会议否则*/
+                        var obj = meetingflag ? {
+                            designator: "02",
+                            fieldcontent: ""
+                        } : {
+                            designator: "12",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "215":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "220":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "230":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "250":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "300":
+                    {
+                        obj = {
+                            designator: "1 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "305":
+                    {
+                        obj = {
+                            designator: "1 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "310":
+                    {
+                        obj = {
+                            designator: "1 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "320":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "330":
+                    {
+                        obj = {
+                            designator: "1 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "400":
+                    {
+                        obj = {
+                            designator: " 0",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "410":
+                    {
+                        /*如果410是团队会议否则*/
+                        var obj = meetingflag ? {
+                            designator: "02",
+                            fieldcontent: ""
+                        } : {
+                            designator: "12",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "415":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "420":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "430":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "450":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "500":
+                    {
+                        obj = {
+                            designator: " 0",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "510":
+                    {
+                        /*如果410是团队会议否则*/
+                        var obj = meetingflag ? {
+                            designator: "02",
+                            fieldcontent: ""
+                        } : {
+                            designator: "12",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "515":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "520":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "530":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "550":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "690":
+                    {
+                        obj = {
+                            designator: "1 ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "801":
+                    {
+                        obj = {
+                            designator: " 0",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "810":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "815":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "820":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "825":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "830":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                case "835":
+                    {
+                        obj = {
+                            designator: "  ",
+                            fieldcontent: ""
+                        }
+                    };
+                    break;
+                default:
+                    {
+                        obj = false;alert("输入的字段号不存在")
+                    };
+            }
+        }
+
 
         return obj;
     }

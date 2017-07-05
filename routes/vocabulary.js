@@ -116,97 +116,171 @@ module.exports = function(router) {
 		res.json(multigroupqueryjson);
 	});
 	/**/
-	router.all('/getmarcdata',function(request,response,next){
-		var marcdata = [{
-			"marcverification": "",
-			"fieldnum": "001",
-			"designator": "",
-			"fieldcontent": "C055480",
-		},{
-			"marcverification": "",
-			"fieldnum": "005",
-			"designator": "",
-			"fieldcontent": "20170331092907.0",
-		},{
-			"marcverification": "",
-			"fieldnum": "024",
-			"designator": "",
-			"fieldcontent": "00000cw   2200000 a 45",
-		},{
-			"marcverification": "",
-			"fieldnum": "100",
-			"designator": "",
-			"fieldcontent": "^a20170417aaaa abbachiy0108      ea",
-		},{
-			"marcverification": "",
-			"fieldnum": "184",
-			"designator": "0 ",
-			"fieldcontent": "^aCLC^b中国图书馆分类法^c5^echi",
-		},{
-			"marcverification": "",
-			"fieldnum": "250",
-			"designator": "0 ",
-			"fieldcontent": "^d03^aB21^9B^h哲学^j",
-		},{
-			"marcverification": "",
-			"fieldnum": "330",
-			"designator": "0 ",
-			"fieldcontent": "^a运用马克思列宁主义、毛泽东思想、邓小平理论对各学科门类的专题研究，按其内容分入有关各类。例：马克思主义哲学入B0-0，科学社会主义理论入D0-0，马克思主义政治经济学入F0-0",
-		},{
-			"marcverification": "",
-			"fieldnum": "661",
-			"designator": "0 ",
-			"fieldcontent": "^a各代哲学史入有关各时代。例：《先秦哲学思想史》 入B22",
-		},{
-			"marcverification": "",
-			"fieldnum": "801",
-			"designator": " 0 ",
-			"fieldcontent": "^aCN^bNLC^c20170331",
-		}];
+	router.all('/getmarcdata', function(request, response, next) {
+		var type = request.body.type;
+		var marcdata = "";
+		console.log(type === "classify");
+		console.log(type === "theme");
+		if (type === "classify") {
+			marcdata = [{
+				"marcverification": "",
+				"fieldnum": "001",
+				"designator": "",
+				"fieldcontent": "C055480",
+			}, {
+				"marcverification": "",
+				"fieldnum": "005",
+				"designator": "",
+				"fieldcontent": "20170331092907.0",
+			}, {
+				"marcverification": "",
+				"fieldnum": "024",
+				"designator": "",
+				"fieldcontent": "00000cw   2200000 a 45",
+			}, {
+				"marcverification": "",
+				"fieldnum": "100",
+				"designator": "",
+				"fieldcontent": "^a20170417aaaa abbachiy0108      ea",
+			}, {
+				"marcverification": "",
+				"fieldnum": "184",
+				"designator": "0 ",
+				"fieldcontent": "^aCLC^b中国图书馆分类法^c5^echi",
+			}, {
+				"marcverification": "",
+				"fieldnum": "250",
+				"designator": "0 ",
+				"fieldcontent": "^d03^aB21^9B^h哲学^j",
+			}, {
+				"marcverification": "",
+				"fieldnum": "330",
+				"designator": "0 ",
+				"fieldcontent": "^a运用马克思列宁主义、毛泽东思想、邓小平理论对各学科门类的专题研究，按其内容分入有关各类。例：马克思主义哲学入B0-0，科学社会主义理论入D0-0，马克思主义政治经济学入F0-0",
+			}, {
+				"marcverification": "",
+				"fieldnum": "661",
+				"designator": "0 ",
+				"fieldcontent": "^a各代哲学史入有关各时代。例：《先秦哲学思想史》 入B22",
+			}, {
+				"marcverification": "",
+				"fieldnum": "801",
+				"designator": " 0",
+				"fieldcontent": "^aCN^bNLC^c20170331",
+			}];
+		}
+		if (type === "theme") {
+			marcdata = [{
+				"marcverification": "",
+				"fieldnum": "001",
+				"designator": "",
+				"fieldcontent": "S055480",
+			}, {
+				"marcverification": "",
+				"fieldnum": "005",
+				"designator": "",
+				"fieldcontent": "20170331103410.0",
+			}, {
+				"marcverification": "",
+				"fieldnum": "024",
+				"designator": "",
+				"fieldcontent": "00000cw   2200000 a 45",
+			}, {
+				"marcverification": "",
+				"fieldnum": "100",
+				"designator": "",
+				"fieldcontent": "^a20010701achiy50      ea",
+			}, {
+				"marcverification": "",
+				"fieldnum": "250",
+				"designator": "  ",
+				"fieldcontent": "^a内蒙古",
+			}, {
+				"marcverification": "",
+				"fieldnum": "250",
+				"designator": "  ",
+				"fieldcontent": "^7ba^anei meng gu",
+			}, {
+				"marcverification": "",
+				"fieldnum": "330",
+				"designator": "1 ",
+				"fieldcontent": "^a",
+			}, {
+				"marcverification": "",
+				"fieldnum": "450",
+				"designator": "  ",
+				"fieldcontent": "^8eng^aInner Mongolia",
+			}, {
+				"marcverification": "",
+				"fieldnum": "450",
+				"designator": "0 ",
+				"fieldcontent": "^6a01^a历史唯物主义",
+			},{
+				"marcverification": "",
+				"fieldnum": "450",
+				"designator": "0 ",
+				"fieldcontent": "^6a01^7ba^ali shi wei wu zhu yi",
+			},{
+				"marcverification": "",
+				"fieldnum": "550",
+				"designator": "  ",
+				"fieldcontent": "^3^5^a",
+			}, {
+				"marcverification": "",
+				"fieldnum": "801",
+				"designator": " 0",
+				"fieldcontent": "^aCN^bNLC^c20020701",
+			}];
+		}
+		if(type!=="classify"&&type!=="theme"){
+			marcdata = {
+				error:0
+			}
+		}
 		response.json(marcdata);
 	});
-	router.all('/addmarcdata',function(request,response,next){
+	router.all('/addmarcdata', function(request, response, next) {
 		var marcdata = [{
 			"marcverification": "",
 			"fieldnum": "001",
 			"designator": "",
 			"fieldcontent": "C055480",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "005",
 			"designator": "",
 			"fieldcontent": "2017031092907.0",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "024",
 			"designator": "",
 			"fieldcontent": "00000nw   2200000 a 45",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "100",
 			"designator": "",
 			"fieldcontent": "^a20170417aaaa abbachiy0108      ea",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "184",
 			"designator": "0 ",
 			"fieldcontent": "^aCLC^b中国图书馆分类法^c5^echi",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "250",
 			"designator": "0 ",
 			"fieldcontent": "^d03^a^9B^h哲学",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "330",
 			"designator": "0 ",
 			"fieldcontent": "^",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "661",
 			"designator": "0 ",
 			"fieldcontent": "^",
-		},{
+		}, {
 			"marcverification": "",
 			"fieldnum": "801",
 			"designator": " 0 ",
@@ -250,7 +324,7 @@ module.exports = function(router) {
 			});
 			res.on('end', () => {
 				try {
-					
+
 					data = rawData;
 					const parsedData = JSON.parse(rawData);
 					console.log(parsedData);

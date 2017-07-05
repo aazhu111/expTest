@@ -7,3 +7,18 @@
 .themearearight{
 	flex-grow: 1;
 }
+.themestring{
+	margin-left:15px;
+	margin-right: 15px;
+	padding: 15px;
+}
+.width66\%{
+	width: 66%;
+}
+.h4span{
+    margin-bottom: 5px;
+    margin-left: 1em;
+}
+label{
+	    line-height: 38px;
+}

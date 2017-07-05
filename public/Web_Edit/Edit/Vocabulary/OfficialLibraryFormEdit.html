@@ -32,7 +32,7 @@
     <div class="main-top-title mar-bot15">
         <div class="title">表单编辑</div>
     </div>
-    <div id="wrapper" class="contentmain">
+<div id="wrapper" class="contentmain">
     <div>
         <label class="mr15">分类类型</label>
         <select class="select form-control mr15">
@@ -55,10 +55,11 @@
         <label class="">类名</label>
         <input type="text" class="form-control mr15" name="" value="" >
         <label class="">记录控制号</label>
-        <input type="text" class="form-control mr15 inputreadonly" disabled name="" value="c011146" >
+        <input type="text" class="form-control mr15 inputreadonly" disabled name="" value="C011146" >
     </div>
-    <div class="mt15 formcontent">
+    <div class="mt15 formcontent operate">
         <h4 class="formh4 mt15">注释区</h4>
+        <div><span class="mr15 themeadd  h4span hide"></span></div>
         <div class="note">
             <label class="" style="margin-right: 100px">注释</label>
                 <select class="selectnowidth form-control mr15">
@@ -79,7 +80,7 @@
                     <option value="856">电子定位与检索（856）</option>
                     <option value="876">与来源附注的关系（876）</option>
                 </select>
-                <span class="mr15 fieldqueryadd"></span>
+                <span class="mr15 fieldqueryadd" data-operate="0"></span>
                 <span class="mr15 fieldquerydel"></span>
                 <div class="mt15">
                     <textarea  rows="3">中国哲学史、思想史、少数名族哲学史入此</textarea>
@@ -103,31 +104,76 @@
         </div>
         </div>
     </div>
-    <div class="mt15 formcontent">
+    <div class="mt15 formcontent ">
         <h4 class="formh4 mt15">对应主题词串区</h4>
+        <div class="mt15 themestring formcontent  operate">
+            <div class="flex mt15">
+                <label class="mr15">专指对应</label>
+                <input type="text" class="form-control mr15 fg1" name="" value="" >
+                <label class="mr15">代项</label>
+                <input type="text" class="form-control mr15 fg5" name="" value="" >
+                <span class="mr15 fieldqueryadd" data-operate="1"></span>
+                <span class="mr15 fieldquerydel"></span>
+            </div>
+        </div>        
+        <div class="mt15 themestring formcontent  operate">
+            <div class="flex mt15">
+                <label class="mr15">附属对应</label>
+                <input type="text" class="form-control mr15 fg1" name="" value="" >
+                <label class="mr15">代项</label>
+                <input type="text" class="form-control mr15 fg5" name="" value="" >
+                <span class="mr15 fieldqueryadd" data-operate="2"></span>
+                <span class="mr15 fieldquerydel"></span>
+                </div>
+        </div>    
+        </div>
     </div>
-    </div>
+</div>
 </main>
 <footer class="pagefooter"></footer>
 </body>
-<script id="marcClassifyTemplate" type="text/x-handlebars-template">
- <table class="table-common">
-    <thead>
-    <tr>
-    <th>校验</th><th>字段号</th><th>指示符</th><th>字段内容</th><th>操作</th></tr>
-    </thead>
-    </tbody>
-            {{#each this}}
-             <tr>
-                <td>{{{marcverification marcverification @index}}}</td>
-                <td>{{{fieldnum fieldnum @index false}}}</td>
-                <td>{{{designator designator fieldnum @index false}}}</td>
-                <td class="tlleft disablededit">{{{fieldcontent fieldcontent fieldnum false}}}</td>
-                <td>{{{marcoperatebtn @index 0}}}</td>
-            </tr>
-            {{/each}}
-    </tbody>
-</table>
+<script id="ClassifyFormTemplate0" type="text/x-handlebars-template">
+            <label class="" style="margin-right: 100px">注释</label>
+                <select class="selectnowidth form-control mr15">
+                    <option value="330">一般范围注释（330）</option>
+                    <option value="343">单纯参照注释（343） </option>
+                    <option value="353">相关参照注释（353）</option>
+                    <option value="661">复分、仿分注释（661）</option>
+                    <option value="663">专类复分表款目（663）</option>
+                    <option value="668">引用（组配）和优先顺序说明（668）</option>
+                    <option value="669">复分范围中除外注释（669）</option>
+                    <option value="825">应用指令注释（825）</option>
+                    <option value="830">附表指令注释（830）</option>
+                    <option value="875">沿革注释（875）</option>
+                    <option value="662">附表标识（662） </option>
+                    <option value="665">组配类号（665）  </option>
+                    <option value="804">识别代码（804）</option>
+                    <option value="820">分类实例根查注释（820）</option>
+                    <option value="856">电子定位与检索（856）</option>
+                    <option value="876">与来源附注的关系（876）</option>
+                </select>
+                <span class="mr15 fieldqueryadd" data-operate="0"></span>
+                <span class="mr15 fieldquerydel"></span>
+                <div class="mt15">
+                    <textarea  rows="3"></textarea>
+                </div>
+</script>
+<script id="ClassifyFormTemplate1" type="text/x-handlebars-template">
+            <label class="mr15">附属对应</label>
+            <input type="text" class="form-control mr15 fg1" name="" value="" >
+            <label class="mr15">代项</label>
+            <input type="text" class="form-control mr15 fg5" name="" value="" >
+            <span class="mr15 fieldqueryadd" data-operate="1"></span>
+            <span class="mr15 fieldquerydel"></span>
+</script>
+<script id="ClassifyFormTemplate2" type="text/x-handlebars-template">
+            <label class="mr15">附属对应</label>
+            <input type="text" class="form-control mr15 fg1" name="" value="" >
+            <label class="mr15">代项</label>
+            <input type="text" class="form-control mr15 fg5" name="" value="" >
+            <span class="mr15 fieldqueryadd" data-operate="2"></span>
+            <span class="mr15 fieldquerydel"></span>
+</script>
 </script>
 <script src="/static/Web_Edit/asset/bower_components/requirejs/require.js"></script>
     <script type="text/javascript">
