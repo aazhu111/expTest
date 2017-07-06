@@ -205,22 +205,26 @@ module.exports = function(router) {
 				"fieldnum": "330",
 				"designator": "1 ",
 				"fieldcontent": "^a",
-			}, {
+			}, 
+			/*{
 				"marcverification": "",
 				"fieldnum": "450",
 				"designator": "  ",
 				"fieldcontent": "^8eng^aInner Mongolia",
-			}, {
+			}, */
+			/*{
 				"marcverification": "",
 				"fieldnum": "450",
 				"designator": "0 ",
 				"fieldcontent": "^6a01^a历史唯物主义",
-			},{
+			},
+			{
 				"marcverification": "",
 				"fieldnum": "450",
 				"designator": "0 ",
 				"fieldcontent": "^6a01^7ba^ali shi wei wu zhu yi",
-			},{
+			},*/
+			{
 				"marcverification": "",
 				"fieldnum": "550",
 				"designator": "  ",
