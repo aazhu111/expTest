@@ -18,5 +18,5 @@ require.config({
 
 
 require(['common',],function(common, Clipboard){
-   // window['Clipboard'] = Clipboard;
+    window['Clipboard'] = Clipboard;
 });

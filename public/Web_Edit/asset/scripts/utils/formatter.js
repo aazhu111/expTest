@@ -296,12 +296,12 @@ define(function() {
 
     /**
      * marc字段号生成相应的指示符和字段内容
-     * @param  {[type]} fieldnum [description]
-     * @param  {[type]} true [description]
-     * @param  {[type]} meetingflag [description]
-     * @return {Object} obj}   [description]
+     * @param  {[type]} type marc类型？theme：classify
+     * @param  {[type]} fieldnum 字段号
+     * @param  {[type]} meetingflag ？团队会议：个人会议
+     * @return {Object} obj}   返回一个json对象
      */
-    fmt.marcClassifyFormate = function(type, fieldnum, flag, meetingflag) {
+    fmt.marcClassifyFormate = function(type, fieldnum, meetingflag) {
         var obj;
         if (type === "classify") {
             switch (fieldnum) {
@@ -700,7 +700,7 @@ define(function() {
                     {
                         obj = {
                             designator: " 0",
-                            fieldcontent: ""
+                            fieldcontent: "^8eng^a"
                         }
                     };
                     break;
@@ -709,10 +709,10 @@ define(function() {
                         /*如果410是团队会议否则*/
                         var obj = meetingflag ? {
                             designator: "02",
-                            fieldcontent: ""
+                            fieldcontent: "^8eng^a"
                         } : {
                             designator: "12",
-                            fieldcontent: ""
+                            fieldcontent: "^8eng^a"
                         }
                     };
                     break;
@@ -720,7 +720,7 @@ define(function() {
                     {
                         obj = {
                             designator: "  ",
-                            fieldcontent: ""
+                            fieldcontent: "^8eng^a"
                         }
                     };
                     break;
@@ -728,7 +728,7 @@ define(function() {
                     {
                         obj = {
                             designator: "  ",
-                            fieldcontent: ""
+                            fieldcontent: "^8eng^a"
                         }
                     };
                     break;
@@ -736,7 +736,7 @@ define(function() {
                     {
                         obj = {
                             designator: "  ",
-                            fieldcontent: ""
+                            fieldcontent: "^8eng^a"
                         }
                     };
                     break;
@@ -744,7 +744,7 @@ define(function() {
                     {
                         obj = {
                             designator: "  ",
-                            fieldcontent: ""
+                            fieldcontent: "^8eng^a"
                         }
                     };
                     break;

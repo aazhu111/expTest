@@ -15,7 +15,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
 
     //格式校验
     Handlebars.registerHelper("marcverification", function(data, index, option) {
-        return '<span>' + data + '</span>'
+        return '<span>' + data + '</span>';
     });
     //字段号
     Handlebars.registerHelper("fieldnum", function(data, index, flag, option) {
@@ -55,7 +55,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
             } else {
                 designatorstring = flag ?
                     '<input type="text" class="width30 designator" value="' + data + '">' :
-                    '<input type="text" class="width30" value="' + data + '">'
+                    '<input type="text" class="width30 designator" value="' + data + '">'
             }
         }
         /*主题款目marc编辑*/
@@ -65,7 +65,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
             } else {
                 designatorstring = flag ?
                     '<input type="text" class="width30 designator" value="' + data + '">' :
-                    '<input type="text" class="width30" value="' + data + '">'
+                    '<input type="text" class="width30 designator" value="' + data + '">'
             }
         }
 
