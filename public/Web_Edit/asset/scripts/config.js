@@ -17,6 +17,6 @@ require.config({
 });
 
 
-require(['common',],function(common, Clipboard){
+require(['common','clipboard'],function(common, Clipboard){
     window['Clipboard'] = Clipboard;
 });

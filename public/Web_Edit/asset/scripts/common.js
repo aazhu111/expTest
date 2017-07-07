@@ -125,7 +125,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
                         '<span>' + datastring + '</span>' +
                         '</div>' +
                         '<div style="flex-grow:1;">' +
-                        '<input  type="text" class="width100% " value="^' + dataarr[dataarr.length - 1] + '">' +
+                        '<input  type="text" class="width100% countfieldnum " value="^' + dataarr[dataarr.length - 1] + '">' +
                         '</div>'
                         '<div>'
 
@@ -214,32 +214,32 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
                     break;
                 case "400":
                     {
-                        fieldcontent = '<input type="text" class="width100% " value="' + data + '">';
+                        fieldcontent = '<input type="text" class="width100% fieldcontent" value="' + data + '">';
                     };
                     break;
                 case "410":
                     {
-                        fieldcontent = '<input type="text" class="width100% " value="' + data + '">';
+                        fieldcontent = '<input type="text" class="width100% fieldcontent" value="' + data + '">';
                     };
                     break;
                 case "415":
                     {
-                        fieldcontent = '<input type="text" class="width100% " value="' + data + '">';
+                        fieldcontent = '<input type="text" class="width100% fieldcontent" value="' + data + '">';
                     };
                     break;
                 case "420":
                     {
-                        fieldcontent = '<input type="text" class="width100% " value="' + data + '">';
+                        fieldcontent = '<input type="text" class="width100% fieldcontent" value="' + data + '">';
                     };
                     break;
                 case "430":
                     {
-                        fieldcontent = '<input type="text" class="width100% " value="' + data + '">';
+                        fieldcontent = '<input type="text" class="width100% fieldcontent" value="' + data + '">';
                     };
                     break;
                 case "450":
                     {
-                        fieldcontent = '<input type="text" class="width100% " value="' + data + '">';
+                        fieldcontent = '<input type="text" class="width100% fieldcontent" value="' + data + '">';
                     };
                     break;
                 case "690":

@@ -33,6 +33,8 @@ define(['jquery', 'common', 'utils/xhr', 'utils/formatter', 'handlebars'], funct
 				dataType: "json",
 				data: {
 					"type": varnamespace.type,
+					"id": "",
+					"databasecode": ""
 				},
 				success: function(data) {
 					var template = Handlebars.compile($("#marcThemeTemplate").html());
@@ -148,15 +150,68 @@ define(['jquery', 'common', 'utils/xhr', 'utils/formatter', 'handlebars'], funct
 			$("#wrapper").on("click", ".del", function() {
 				$(this).parent().parent().remove();
 				gatherFieldNumContent(); /*遍历一遍，获取最大值*/
+			});
+			$("#btngroup").click(function() {
+				updatedata();
 			})
+
+		}
+		function updatedata() {
+			var content = [];
+			var ajaxjson = {
+				"id": "",
+				"databasecode": "",
+				"content": content
+			}
+			var elearr = $("#wrapper tbody").children();
+			$.each(elearr, function(index,element) {
+				content[index] = gatherdata($(this),true,index);
+			})
+			console.log(ajaxjson);
+
+		}
+		/*false表示进入递归，index是序号给后台传json时的序号*/
+		function gatherdata(element, flag,index) {
+			var contentobj = {
+				"fieldid":"",
+				"fieldcontent":"",
+			};
+			var contentstring = "";
+			if (flag) {
+				if(getspaninputval(element.children().eq(2).children())){
+					var fieldnumdegintor = getspaninputval(element.children().eq(1).children()) +getspaninputval(element.children().eq(2).children()) +index;
+				}else{
+					var fieldnumdegintor = getspaninputval(element.children().eq(1).children()) +index;
+				}
+				
+				contentobj.fieldid = fieldnumdegintor;
+				
+				if(element.children().eq(3).children().length>1){
+					contentstring += gatherdata(element.children().eq(3),false)
+				}else{
+					contentstring += getspaninputval(element.children().eq(3).children())
+				}
+			}
+			if(!flag){
+				$(element.children()).each(function(index,element){
+					contentstring += getspaninputval($(this));
+
+				})
+				 return contentstring;
+			}
+			contentobj.fieldcontent = contentstring;
+			return contentobj;
+
+
+
 
 		}
 		/*事件观察者*/
 		function registerwathcer() {
-			$("#wrapper").on("keyup",".designator",function(){
+			$("#wrapper").on("keyup", ".designator", function() {
 				var str = getspaninputval($(this));
-				if(str&&str.length>1){
-					setspaninputval($(this),str.substring(0,2));
+				if (str && str.length > 1) {
+					setspaninputval($(this), str.substring(0, 2));
 				}
 			})
 			$("#wrapper").on("blur", ".fieldnum", function() {
@@ -205,17 +260,17 @@ define(['jquery', 'common', 'utils/xhr', 'utils/formatter', 'handlebars'], funct
 					cachedata = formatter.fmt.marcClassifyFormate(varnamespace.type, data.fieldnum)
 					$.extend(data, cachedata); /*深拷贝数据*/
 					if (cachefiedlnum.noeng === false) {
-						
+
 						/*$(this).parents("tr").children().eq(3).children().html(data.fieldcontent);
 						$(this).parents("tr").children().eq(3).children().val(data.fieldcontent);*/
-						inputdata($this,data.fieldcontent)
-						inputdata($this1,data.designator);
+						setspaninputval($this, data.fieldcontent)
+						setspaninputval($this1, data.designator);
 						return;
 					}
 					/*$(this).parents("tr").children().eq(3).children().html(getheaderstring(cachefiedlnum.maxval) + "^a");
 					$(this).parents("tr").children().eq(3).children().val(getheaderstring(cachefiedlnum.maxval) + "^a");*/
-					inputdata($this,getheaderstring(cachefiedlnum.maxval) + "^a")
-					inputdata($this1,data.designator);
+					setspaninputval($this, getheaderstring(cachefiedlnum.maxval) + "^a")
+					setspaninputval($this1, data.designator);
 
 
 
@@ -233,9 +288,5 @@ define(['jquery', 'common', 'utils/xhr', 'utils/formatter', 'handlebars'], funct
 			})
 		}
 		init(); /*程序入口*/
-		function inputdata($this,data){
-			$this.html(data);
-			$this.val(data);
-		}
 	});
 });

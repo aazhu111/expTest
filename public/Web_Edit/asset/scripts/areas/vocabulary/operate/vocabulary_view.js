@@ -19,6 +19,9 @@ define(['common', 'utils/xhr', 'utils/copyutil','jquery' ], function( common, xh
         var $theme1 = $("#theme1");
         var $theme2 = $("#theme2");
         var flag = false;
+        $(document).click(function(){
+             $(".floatboxright_ul").hide();
+        })
         //box.innerHTML = "<p id='copy-p' style='text-align:center;font-size:28px;'>内蒙古</p>"
         function clickDom1(domEle) {
             var a1 = navigator.userAgent;
